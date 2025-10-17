@@ -262,16 +262,75 @@
 }
 
 .sectionFour .hobby-main {
-  color: #fff;
+  color: #000;
   font-weight: 550;
-  text-align: center;
-  font-size: 30px;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.sectionFour .hobby-main ul {
-  list-style: none;
-  margin: 0 auto;
+.sectionFour .hobby-main .hobby-item {
+  padding: 20px 30px;
+  max-width: 18%;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  border-radius: 20px;
+  transition: var(--hv-transition);
+}
+
+.sectionFour .hobby-main .hobby-item:hover {
+  transform: translateY(8px) scale(1.1);
+}
+
+.sectionFour .hobby-main .hobby-item span {
+  color: #2f96c3;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sectionFour .hobby-main .hobby-item .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionFour .hobby-main .hobby-item .content .name {
+  font-size: 25px;
+  font-weight: 650;
+}
+
+.sectionFour .hobby-main .hobby-item .content .sub {
+  color: #03172dd5;
+  font-size: 13px;
+  text-align: center;
+  min-width: 230px;
+}
+
+.sectionFour .hobby-main .hobby-item.film span {
+  color: #eb0c0c;
+}
+
+.sectionFour .hobby-main .hobby-item.film {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.sectionFour .hobby-main .hobby-item.music span {
+  color: #dcf0a3;
+}
+
+.sectionFour .hobby-main .hobby-item.music {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.sectionFour .hobby-main .hobby-item.soccer span {
+  color: #c4431c;
+}
+
+.sectionFour .hobby-main .hobby-item.soccer {
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
 }
 
 .sectionFour .hobby-img img {
@@ -678,6 +737,32 @@
 
 .sectionEight .contact-me .details .contact-item:hover .link-facebook {
   color: #51a2ff;
+}
+
+.sectionEight .contact-me .details .contact-item .icon-instagram {
+  color: #ff00cc;
+  background-color: #39072e;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .icon-instagram {
+  background-color: #4c0b46;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .link-instagram {
+  color: #ff00cc;
+}
+
+.sectionEight .contact-me .details .contact-item .icon-github {
+  color: #2140a7ee;
+  background-color: #262753;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .icon-github {
+  background-color: #4c4e8a;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .link-github {
+  color: #2140a7ee;
 }
 
 .sectionEight .form-contact {

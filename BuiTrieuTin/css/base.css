@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-one: #9bd63d;
+  --color-hv: #fcb700;
+  --color-text: #1e1e1e;
+  --font: "Montserrat", sans-serif;
+
+  --hv-transition: 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+html {
+  overflow-x: hidden; /* Turn Off Scroll */
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Button */
+
+.button {
+  display: inline-block;
+  padding: 9px 25px;
+  border-radius: 45px;
+  background-color: #fff;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease 0s;
+  border: none;
+}
+
+.button1 {
+  background-color: var(--color-two);
+  color: #fff;
+}
+
+.button1:hover {
+  background-color: var(--color-one);
+  color: #fff;
+}
+
+.button2 {
+  background-color: var(--color-one);
+  color: #fff;
+}
+
+.button2:hover {
+  background-color: var(--color-two);
+  color: #fff;
+}
+/* End Button */
+
+/* Box Head */
+
+.box-head {
+  text-align: center;
+}
+
+.box-head .inner-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.box-head .inner-desc {
+  font-size: 15px;
+  color: #777;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* End Box Head */

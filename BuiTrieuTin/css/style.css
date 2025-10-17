@@ -1,0 +1,811 @@
+/* Header */
+.header {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px 50px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #fff;
+  transition: vả(--hv-transition);
+}
+
+.header .navbar:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header .navbar a {
+  color: #fff;
+}
+
+.header .navbar .navbar-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: var(--hv-transition);
+}
+
+.header .navbar .navbar-name:hover {
+  color: var(--color-hv);
+  transform: translateY(-5px);
+}
+
+.header .navbar .navbar-menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.header .navbar .navbar-menu ul li a {
+  display: inline-block;
+  color: var(--text);
+  transition: var(--hv-transition);
+}
+
+.header .navbar .navbar-menu ul li a:hover {
+  color: var(--color-hv);
+  transform: translateY(-5px);
+}
+
+/* End Header */
+
+/* Section One - Banner */
+.sectionOne {
+  perspective: 1000px; /* tạo không gian 3D */
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  margin: 0 auto;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/section-one.png");
+}
+
+.sectionOne img {
+  display: flex;
+  margin: 0 auto;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.8s ease; /*xoay và nổi lên từ từ*/
+  animation: float 3s ease-in-out infinite; /*Làm hiệu ứng lặp vô hạn */
+}
+
+/* Animation làm ảnh trôi nổi lên xuống nhẹ */
+@keyframes float {
+  0%,
+  100% {
+    transform: rotateX(10deg) rotateY(-10deg) translateY(0) translateZ(30px);
+  }
+  50% {
+    transform: rotateX(12deg) rotateY(-8deg) translateY(-10px) translateZ(40px);
+  }
+}
+
+.sectionOne .content {
+  margin-bottom: 15px;
+}
+
+.sectionOne .name {
+  text-align: center;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 550;
+}
+
+.sectionOne .student {
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 550;
+}
+
+.sectionOne .student.highlightA {
+  color: var(--color-one);
+}
+
+.sectionOne .student.highlightB {
+  color: var(--color-hv);
+}
+
+.sectionOne .button-banner {
+  display: flex;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: var(--hv-transition);
+}
+
+.sectionOne .button-banner:hover {
+  transform: scale(1.2);
+  background-color: var(--color-hv);
+  color: #fff;
+}
+
+/* End Section One - Banner */
+
+/* Section Two - Information */
+.sectionTwo {
+  background-color: #0f1727;
+}
+
+.sectionTwo .wrapper {
+  padding: 90px 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTwo .wrapper .info {
+  max-width: 60%;
+  width: 60%;
+}
+
+.sectionTwo .info .object {
+  color: var(--color-hv);
+}
+
+.sectionTwo .info .fullstack {
+  color: var(--color-one);
+}
+
+.sectionTwo .info-img {
+  max-width: 40%;
+  width: 40%;
+}
+
+.sectionTwo .info-img img {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 30px;
+  transform: perspective(1500px) rotateY(15deg); /*3D tạo hiệu ứng sâu */
+  transition: transform 1s ease 0s; /* Hiệu ứng ease bắt đầu chậm -> nhanh -> kết thúc chậm. */
+}
+
+.sectionTwo .info-img img:hover {
+  transform: perspective(3000px) rotateY(5deg); /*Tăng khoảng cách phối cảnh → hiệu ứng 3D nhẹ hơn so với 1500px. */
+}
+/* End Section Two - Information */
+
+/* Section Three - Career */
+.sectionThree {
+  background-color: #050c1d;
+}
+
+.sectionThree .wrapper {
+  padding: 90px 0;
+  color: #fff;
+  font-weight: 550;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionThree .career-img {
+  max-width: 40%;
+  width: 40%;
+}
+
+.sectionThree .career-img img {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 30px;
+  transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg)
+    scale(0.9, 0.9);
+  /*Perspective(750px - Tạo hiệu ứng phối cảnh 3D (độ sâu). */
+  /* translate3d(0px, 0px, -250px) - Dịch chuyển phần tử trong không gian 3D theo 3 trục:*/
+  border: 5px solid #e6e6e6;
+  transition: 0.4s ease-in-out transform;
+}
+
+.sectionThree .career-img img:hover {
+  transform: translate3d(
+    0px,
+    0px,
+    -250px
+  ); /*ảnh ngẩng lên, thẳng ra, không còn nghiêng */
+}
+
+.sectionThree .career-main {
+  max-width: 60%;
+  width: 60%;
+}
+
+.sectionThree .career-main .sort {
+  color: #b01384;
+}
+
+.sectionThree .career-main .long {
+  color: #edd54c;
+}
+/* End Section Three - Career */
+
+/* Section Four - Hobby */
+.sectionFour {
+  background-color: #010101;
+}
+
+.sectionFour .wrapper {
+  padding: 90px 0;
+}
+
+.sectionFour .hobby-main {
+  color: #fff;
+  font-weight: 550;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.sectionFour .hobby-main ul {
+  list-style: none;
+  margin: 0 auto;
+}
+
+.sectionFour .hobby-img img {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 30px;
+  transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(1deg); /*rotate3d(0.5, -0.866, 0, 15deg) tạo hiệu ứng 3d theo trục xyz*/
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /*Tạo hiệu ứng chuyển động mượt khi hover.*/
+}
+
+.sectionFour .hobby-img img:hover {
+  transform: rotate3d(0, 0, 0, 0deg) rotate(0deg); /*ảnh đứng thẳng lên,*/
+}
+/* End Section Four - Hobby */
+
+/* Section Five - Skills */
+.sectionFive {
+  background-color: #09090b;
+}
+
+.sectionFive .skills-main {
+  padding: 90px 0;
+  color: #fff;
+}
+
+.sectionFive .skills-main .content-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.sectionFive .skills-main .content-top .content-left {
+  max-width: 50%;
+  width: 50%;
+}
+
+.sectionFive .skills-main .content-top .content-left .title {
+  display: flex;
+  flex-direction: column;
+  line-height: 45px;
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sectionFive .content-top .content-left .title .fullstack {
+  color: var(--color-hv);
+}
+
+.sectionFive .content-top .content-left .title .dev {
+  color: #37a2cd;
+}
+
+.sectionFive .content-top .content-left .sub {
+  color: #ccc;
+  font-size: 15px;
+}
+
+.sectionFive .skills-main .content-top .content-right {
+  max-width: 50%;
+  width: 50%;
+}
+
+.sectionFive .skills-main .content-top .content-right .icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon {
+  width: 200px;
+  height: 180px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  border-radius: 20px;
+  transition: var(--hv-transition);
+}
+
+.sectionFive .content-top .content-right .icon-list .icon div {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.frontend {
+  color: #c9dbf6;
+  background-color: #151c31;
+  border: 1px solid #c9dbf6;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.frontend:hover {
+  background-color: #c9dbf6;
+  color: #151c31;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.backend {
+  color: #02d877;
+  background-color: #081d1b;
+  border: 1px solid #02d877;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.backend:hover {
+  color: #081d1b;
+  background-color: #02d877;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.database {
+  color: #b573f1;
+  background-color: #26192c;
+  border: 1px solid #b573f1;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.database:hover {
+  color: #26192c;
+  background-color: #b573f1;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.web {
+  color: #f1b40d;
+  background-color: #21170c;
+  border: 1px solid #f1b40d;
+}
+
+.sectionFive .content-top .content-right .icon-list .icon.web:hover {
+  color: #21170c;
+  background-color: #f1b40d;
+}
+
+.sectionFive .content-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sectionFive .content-bottom .title {
+  color: #ccc;
+  font-size: 15px;
+}
+
+.sectionFive .content-bottom .icon-list {
+  display: flex;
+}
+
+.sectionFive .content-bottom .icon-list .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 180px;
+  min-height: 100px;
+  background-color: #101420;
+  border: 1px solid #1a202a;
+  margin-right: 15px;
+  border-radius: 20px;
+  font-size: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--hv-transition);
+}
+
+/* lớp pseudo ::after dùng để tạo hiệu ứng gradient */
+.sectionFive .content-bottom .icon-list .icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  border-radius: 20px;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    #f78ca0 0%,
+    #f9748f 19%,
+    #fd868c 60%,
+    #fe9a8b 100%
+  );
+  transition: var(--hv-transition);
+  z-index: 0;
+}
+
+/* khi hover — gradient dâng lên */
+.sectionFive .content-bottom .icon-list .icon:hover::after {
+  height: 100%;
+}
+
+/* Hiệu ứng khi hover */
+.sectionFive .content-bottom .icon-list .icon:hover {
+  transform: translateY(-8px) scale(1.1);
+}
+
+/* để nội dung nằm trên gradient */
+.sectionFive .content-bottom .icon-list .icon i,
+.sectionFive .content-bottom .icon-list .icon div {
+  position: relative;
+  z-index: 1;
+}
+
+.sectionFive .content-bottom .icon-list .icon div {
+  font-size: 12px;
+  font-weight: 550;
+}
+/* End Section Five - Skills */
+
+/* Section Six - Certificates */
+.sectionSix {
+  background-color: #000c08;
+}
+
+.sectionSix .title {
+  padding: 90px 0;
+  color: #fff;
+  font-weight: 550;
+  text-align: center;
+}
+
+.sectionSix .title .title-main {
+  font-size: 45px;
+  color: #3570d5;
+}
+
+.sectionSix .title p {
+  color: #ccc;
+}
+/* End Section Six - Certificates */
+
+/* Section Seven - Projects */
+.sectionSeven {
+  background-color: #062535;
+}
+
+.sectionSeven .wrapper {
+  padding: 90px 0;
+  color: #fff;
+}
+
+.sectionSeven .project-common:nth-child(1) {
+  margin-bottom: 50px;
+}
+
+.sectionSeven .project-common .title {
+  font-size: 25px;
+  font-weight: 550;
+  color: var(--color-hv);
+}
+
+.sectionSeven .project-common .sub .htmlcss {
+  color: #e2632c;
+}
+
+.sectionSeven .project-common .sub .target {
+  color: var(--color-one);
+}
+
+.sectionSeven .project-common .sub .demo {
+  color: #e44c4f;
+}
+
+.sectionSeven .project-common .sub .link {
+  color: #910ed2;
+  transition: var(--hv-transition);
+  position: relative;
+  display: inline-block;
+}
+
+/* lớp pseudo ::after dùng để tạo hiệu ứng gạch chân */
+.sectionSeven .project-common .sub .link::after {
+  content: "";
+  left: 0;
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -3px; /*Dòng gạch cách -3px */
+  background-color: #66cfe7;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Khi hover thì sẽ có hiệu ứng gạch ngang */
+.sectionSeven .project-common .sub .link:hover::after {
+  width: 100%;
+}
+
+.sectionSeven .project-common .sub .link:hover {
+  transform: translateX(15px) scale(1.1); /*Hiệu ứng khi hover*/
+}
+
+.sectionSeven .project-common .title-two {
+  color: #3b3ee3;
+}
+
+.sectionSeven .project-common .sub .bootstrap {
+  color: #e450ab;
+}
+/* End Section Seven - Projects */
+
+/* Section Eight - Contact */
+.sectionEight {
+  background-color: #09090b;
+}
+
+.sectionEight .wrapper {
+  padding: 90px 0;
+  color: #fff;
+}
+
+.sectionEight .title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionEight .title .title-main {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.sectionEight .title .sub {
+  color: #ccc;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.sectionEight .contact-me {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionEight .contact-me .details {
+  max-width: 50%;
+  width: 50%;
+}
+
+.sectionEight .contact-me .details .title-bottom {
+  font-size: 18px;
+  font-weight: 550;
+  margin-bottom: 20px;
+}
+
+.sectionEight .contact-me .details .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.sectionEight .contact-me .details .contact-item .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  transition: var(--hv-transition);
+}
+
+.sectionEight .contact-me .details .contact-item .icon-email {
+  color: #7c86ff;
+  background-color: #171530;
+}
+
+.sectionEight .contact-me .details .content .name {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #f3eeee51;
+  font-weight: 500;
+}
+
+.sectionEight .contact-me .details .content .link {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 550;
+  transition: var(--hv-transition);
+}
+
+.sectionEight .contact-me .details .contact-item:hover .icon-email {
+  background-color: #1d1b38;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .link-email {
+  color: #7c86ff;
+}
+
+.sectionEight .contact-me .details .contact-item .icon-facebook {
+  color: #51a2ff;
+  background-color: #0b1527;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .icon-facebook {
+  background-color: #10203d;
+}
+
+.sectionEight .contact-me .details .contact-item:hover .link-facebook {
+  color: #51a2ff;
+}
+
+.sectionEight .form-contact {
+  max-width: 50%;
+  width: 50%;
+  padding: 60px;
+  background-color: #101012;
+  border-radius: 20px;
+}
+
+.sectionEight .form-contact .form-info .form-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.sectionEight .form-contact .form-info .form-input .input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionEight .form-contact .form-info .form-input .input label {
+  font-size: 13px;
+  font-weight: 550;
+  color: #94949e;
+}
+
+.sectionEight .form-contact .form-info .form-input .input input {
+  background-color: #1b1b1e;
+  color: #fff;
+  outline: none;
+  height: 40px;
+  width: 220px;
+  border-radius: 20px;
+  padding-left: 20px;
+  border: none;
+}
+
+.sectionEight .form-contact .form-info .form-textarea {
+  margin-bottom: 30px;
+}
+
+.sectionEight .form-contact .form-info .form-textarea .textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionEight .form-contact .form-info .form-textarea .textarea label {
+  font-size: 13px;
+  font-weight: 550;
+  color: #94949e;
+}
+
+.sectionEight .form-contact .form-info .form-textarea .textarea textarea {
+  background-color: #1b1b1e;
+  color: #fff;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px 20px 0 20px;
+  height: 200px;
+  border: none;
+  resize: none;
+}
+
+.sectionEight .form-contact .form-info .button {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 550;
+  color: #fff;
+  background-color: #702dfb;
+  cursor: pointer;
+  transition: var(--hv-transition);
+}
+
+.sectionEight .form-contact .form-info .button span {
+  display: inline-block;
+  transition: var(--hv-transition);
+}
+
+.sectionEight .form-contact .form-info .button:hover span {
+  transform: scale(1.1);
+}
+/* End Section Eight - Contact */
+
+/* Footer */
+.footer {
+  background-color: #000;
+}
+
+.footer .wrapper {
+  padding: 30px 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .wrapper .content-left .name {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #fff;
+}
+
+.footer .wrapper .content-left .sub {
+  font-size: 12px;
+  color: #cccccc4d;
+}
+
+.footer .wrapper .content-right a {
+  color: #fff;
+  margin-right: 20px;
+  transition: var(--hv-transition);
+}
+
+.footer .wrapper .content-right .mail:hover {
+  color: #7c86ff;
+}
+
+.footer .wrapper .content-right .fb:hover {
+  color: #51a2ff;
+}
+
+.footer .wrapper .content-right .contact:hover {
+  color: #fffff0;
+}
+/* End Footer */

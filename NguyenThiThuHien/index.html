@@ -1,533 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
-    <link rel="icon" href="./assets/rocket-icon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:
-    wght@100..900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" 
-    rel="stylesheet">
+    <title>Portfolio - Nguyễn Thị Thu Hiền</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Chức năng bật/tắt menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        // HÀM CHẠY HIỆU ỨNG TYPING
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const typingElement = document.getElementById('typing-text');
+
+            // 1. Thêm class container để bắt đầu animation CSS
+            typingElement.classList.add('typing-text-container');
+
+            // 2. Lắng nghe sự kiện kết thúc animation
+            typingElement.addEventListener('animationend', (e) => {
+                // Chỉ chạy khi animation 'typing' kết thúc
+                if (e.animationName === 'typing') {
+                    // 3. Xóa đường viền (con trỏ)
+                    typingElement.style.borderRight = 'none';
+
+                    // 4. (Rất Quan trọng) Dừng hẳn animation nhấp nháy để nó không quay lại
+                    // Cần ghi đè lại thuộc tính animation của CSS
+                    typingElement.style.animation = 'typing 4s steps(40, end) forwards'; // Giữ lại animation typing đã kết thúc
+                }
+            });
+        });
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class = "container header_container">
-            <!-- left comlumn -->
-            <div class ="header_column-left">
-                <!-- avatar -->
-                <div class="header_img"></div>
 
-                <div class="header_content-left">
-                <h2 class= "header_title">Nguyễn Thị Thu Hiền</h2>
-                <div class="header_badge-container">
-                    <div class="badge">Lập trình web, mobile app</div>
+<body class="antialiased">
+    <!-- Begin Navbar  -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <a href="#header">Nguyễn Thị Thu Hiền</a>
                 </div>
-                <p>Mong muốn ứng tuyển vị trí <span>Fresher Developer</span> trong lĩnh vực 
-                    phát triển web và mobile app.</p>
 
-                <!-- right column -->
-                <div class="header_column-right">
-                    <h2 class="header_title">Thông tin liên hệ</h2>
-                    <p>Gửi email cho mình tại: <span>nguyennhienn1701@gmail.com</span></p>
-                    <p>Gọi cho mình tại: <span>0943123456</span></p>
+                <div class="desktop-menu">
+                    <a href="#about-me-section" class="nav-link">Mục Tiêu</a>
+                    <a href="#experience-section" class="nav-link">Kinh Nghiệm</a>
+                    <a href="#skills-section" class="nav-link">Kỹ Năng</a>
+                    <a href="#projects-section" class="nav-link">Dự Án</a>
+                    <a href="#footer" class="nav-link-primary">Liên Hệ</a>
                 </div>
+
+                <div class="mobile-menu-button">
+                    <button onclick="toggleMenu()" type="button" aria-label="Open main menu">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#about-me-section" onclick="toggleMenu()" class="nav-link-mobile">Mục Tiêu</a>
+            <a href="#experience-section" onclick="toggleMenu()" class="nav-link-mobile">Kinh Nghiệm</a>
+            <a href="#skills-section" onclick="toggleMenu()" class="nav-link-mobile">Kỹ Năng</a>
+            <a href="#projects-section" onclick="toggleMenu()" class="nav-link-mobile">Dự Án</a>
+            <a href="#footer" onclick="toggleMenu()" class="nav-link-mobile nav-link-mobile-primary">Liên Hệ</a>
+        </div>
+    </nav>
+    <!-- End Navbar  -->
+
+    <!-- Begin Header  -->
+    <header id="header" class="header-banner">
+        <div class="container">
+            <div class="header-grid">
+
+                <div class="header-info-left">
+                    <div class="avatar-placeholder">
+                        <img src="./images/avartar.jpg" alt="Nguyễn Thị Thu Hiền Avatar" class="avatar-img">
+                    </div>
+
+                    <h1 class="header-name">
+                        Nguyễn Thị Thu Hiền
+                    </h1>
+                    <div class="header_badge-container">
+                        <span class="badge">Fresher Developer | Web & Mobile App</span>
+                    </div>
+
+                    <p id="typing-text" class="header-description">
+                        Mong muốn ứng tuyển vị trí <span class="font-bold text-primary">Fresher Developer</span> trong
+                        lĩnh vực
+                        phát triển web và mobile app.
+                    </p>
+
+                    <div class="personal-details-box">
+                        <p class="detail-item"><i class="fas fa-calendar-alt"></i> Năm sinh: 2005</p>
+                        <p class="detail-item"><i class="fas fa-venus-mars"></i> Giới tính: Nữ</p>
+                        <p class="detail-item"><i class="fas fa-map-marker-alt"></i> Địa chỉ:Thành phố Hồ Chí Minh, Việt
+                            Nam</p>
+                        <p class="detail-item"><i class="fas fa-graduation-cap"></i> Đại học Giao Thông Vận Tải (UTH)
+                        </p>
+                    </div>
+                </div>
+                <!-- Begin phần Thông tin liên hệ  -->
+                <div class="header-contact-right">
+                    <h2 class="contact-title">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        Thông tin liên hệ
+                    </h2>
+                    <div class="contact-details">
+                        <p class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            Email: <span class="contact-detail-value"> nguyennhienn1701@gmail.com</span>
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            Số điện thoại: <span class="contact-detail-value">0943123456</span>
+                        </p>
+                        <a href="https://github.com/Nguyenhien171" target="_blank" rel="noopener noreferrer"
+                            class="profile-link">
+                            Xem Profile GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- End phần Thông tin liên hệ  -->
             </div>
         </div>
     </header>
+    <!-- End Header  -->
 
-    <!-- About me - Giới thiệu bản thân  -->
-     <section class="aboutMe_section">
-        <!-- Nội dung chính  -->
-         <div class="aboutMe_container">
-            <div class="aboutMe_content_container">
-                <h1 class="section_title">Giới Thiệu Bản Thân</h1>
-
-                <p class="section_desription">
-                    Xin chào! Mình là sinh viên Trường đại học Giao Thông Vận Tải ngành Công nghệ thông tin.
-                </p>
-
-                <div class="CTA">
-                    <a href="#PorjectContainer" class = "outlineButton">Xem Dự Án</a>
-                </div>
-            </div>    
-         </div>
-     </section>
-
-        <!--------------------------------- 
-      Skills - Kỹ Năng
-    ----------------------------------->
-    <section class="skills_section">
-      <div class="container skills_container">
-        <!-- header -->
-        <div class="section_header">
-          <h1 class="section_title">Kỹ năng & Chuyên môn</h1>
-
-          <p class="section_description">
-            Mình có nền tảng về các framework front-end như React và thư viện NextJS.
-          </p>
-        </div>
-
-        <!-- grid -->
-        <div class="skills_grid_container">
-          <!-- grid item 1 -->
-          <div class="skills_grid_item"></div>
-
-          <!-- grid item 2 -->
-          <div class="skills_grid_item">
-            <div class="skills_grid_item_header">
-              <div>
-                <img
-                  src="./assets/check-icon.svg"
-                  alt="check-icon"
-                />
-                <h2>Công cụ & Công nghệ</h2>
-              </div>
-              <p>
-                Có kinh nghiệm xây dựng các ứng dụng web.
-              </p>
+    <!-- Begin Mục Tiêu Nghề Nghiệp -->
+    <section id="about-me-section" class="section about-me">
+        <div class="container text-center">
+            <h1 class="section-title">Mục Tiêu Nghề Nghiệp</h1>
+            <p id="typing-text" class="section-subtitle">
+                Là một Developer với kiến thức nền tảng về lập trình và kinh nghiệm thực chiến trong
+                các dự án sử dụng React/Next.js.
+            </p>
+            <div class="goal-list">
+                <p>1. Ngắn hạn (6 tháng): Trở thành thành viên chính thức trong đội ngũ phát triển, thuần thục các
+                    quy trình Agile/Scrum và tối ưu hiệu năng Front-End.</p>
+                <p>2. Dài hạn (3 năm): Trở thành một Full-stack Developer (Web hoặc Mobile) có khả năng thiết kế hệ
+                    thống và dẫn dắt các dự án nhỏ.</p>
             </div>
-
-            <!-- skill logos -->
-            <div>
-              <!-- list 1 -->
-              <div class="icons-list-wrapper">
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/mysql.svg"
-                      alt="mysql icon"
-                    />
-                    <span>mysql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/mysql.svg"
-                      alt="mysql icon"
-                    />
-                    <span>mysql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- list 2 -->
-              <div class="icons-list-wrapper">
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/mysql.svg"
-                      alt="mysql icon"
-                    />
-                    <span>mysql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/mysql.svg"
-                      alt="mysql icon"
-                    />
-                    <span>mysql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-              </div>
+            <div class="section-action">
+                <a href="#projects-section" class="button-primary">
+                    Xem Dự Án
+                </a>
             </div>
-          </div>
         </div>
-      </div>
     </section>
+    <!-- End Mục Tiêu Nghề Nghiệp -->
 
-  <!-- Projects - Dự Án -->
+    <!-- Begin Thông Tin Nghề Nghiệp & Kinh Nghiệm -->
+    <section id="experience-section" class="section experience">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="section-title">Thông Tin Nghề Nghiệp & Kinh Nghiệm</h1>
+                <p class="section-subtitle">
+                    Các vị trí đã làm và kinh nghiệm tích lũy trong quá trình học tập và làm việc nhóm.
+                </p>
+            </div>
 
-<section class="projects_section" id="PorjectContainer">
-  <div class="container projects_container">
-    <!-- header -->
-    <div class="section_header">
-      <h1 class="section_title">Đồ Án</h1>
-      <p class="section_description">
-        Bộ sưu tập dự án các môn học tại trường này giúp mình củng cố và hoàn thiện
-        những kỹ năng kỹ thuật cũng như khả năng giải quyết vấn đề một cách sáng
-        tạo.
-      </p>
-    </div>
-
-    <!-- cards -->
-    <div class="projects_cards_container">
-      <a
-        href="https://github.com/Nguyenhien171/EcomFE"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="projects_cards">
-          <div class="projects_cards_wrapper">
-            <img
-              src="./assets/project1.jpg"
-              alt="project1"
-              class="projects_cards_img"
-            />
-          </div>
-          <div class="projects_cards_titles">
-            <h4>dự án 1</h4>
-            <h3>Todo List</h3>
-          </div>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Phát triển Web (Frontend)</h3>
+                    <ul class="timeline-responsibilities">
+                        <li><i class="fas fa-caret-right"></i> Phát triển giao diện người dùng bằng React và Tailwind
+                            CSS.</li>
+                        <li><i class="fas fa-caret-right"></i> Tối ưu hóa hiệu suất load trang (Web Vitals) và độ phản
+                            hồi (responsive).</li>
+                        <li><i class="fas fa-caret-right"></i> Tham gia vào quy trình code review và fix bug trên hệ
+                            thống Ecommerce.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Lập trình ứng dụng</h3>
+                    <ul class="timeline-responsibilities">
+                        <li><i class="fas fa-caret-right"></i> Sử dụng React Native để xây dựng ứng dụng luyện nói tiếng
+                            Anh tích hợp AI.</li>
+                        <li><i class="fas fa-caret-right"></i> Thiết kế API tương tác giữa Front-end và Back-end
+                            Node.js.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </a>
+    </section>
+    <!-- End Thông Tin Nghề Nghiệp & Kinh Nghiệm -->
 
-      <a
-        href="https://github.com/Danhtran07/gamehubplatform"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="projects_cards">
-          <div class="projects_cards_wrapper">
-            <img
-              src="./assets/project2.jpg"
-              alt="project1"
-              class="projects_cards_img"
-            />
-          </div>
-          <div class="projects_cards_titles">
-            <h4>dự án 2</h4>
-            <h3>Gamehubplatform</h3>
-          </div>
+    <!-- Begin Chứng Chỉ và Giải Thưởng -->
+    <section id="certificates-section" class="section certificates">
+        <div class="container text-center">
+            <h1 class="section-title">Chứng Chỉ & Giải Thưởng</h1>
+            <p class="section-subtitle">
+                Các thành tích đã đạt được và chứng chỉ chuyên môn.
+            </p>
+
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <i class="fas fa-medal"></i>
+                    <p class="cert-name">Chứng chỉ TOEIC/IELTS</p>
+                    <p class="cert-detail">Chưa có</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-certificate"></i>
+                    <p class="cert-name">Hoàn thành khóa học React & Next.js</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-trophy"></i>
+                    <p class="cert-name">Chứng chỉ MOS</p>
+                    <p class="cert-detail">Chưa có</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-certificate"></i>
+                    <p class="cert-name">Chứng chỉ Lập trình Java</p>
+                    <p class="cert-detail">Không có</p>
+                </div>
+            </div>
         </div>
-      </a>
+    </section>
+    <!-- End Chứng Chỉ và Giải Thưởng -->
 
-      <a
-        href="https://github.com/Katyusha-ski/LapTrinhJava"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="projects_cards">
-          <div class="projects_cards_wrapper">
-            <img
-              src="./assets/project3.jpg"
-              alt="project1"
-              class="projects_cards_img"
-            />
-          </div>
-          <div class="projects_cards_titles">
-            <h4>dự án 3</h4>
-            <h3>AI-Supported English Speaking Practice</h3>
-          </div>
+    <!-- Begin Kỹ năng & Chuyên môn -->
+    <section id="skills-section" class="section skills">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="section-title">Kỹ năng & Chuyên môn</h1>
+                <p class="section-subtitle">
+                    Có nền tảng về các framework front-end như React và thư viện NextJS, cùng với kinh nghiệm
+                    trong các dự án web.
+                </p>
+            </div>
+            <!-- Công cụ và Công nghệ -->
+            <div class="skills-grid">
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <h2 class="skill-group-title">
+                            <i class="fas fa-wrench icon-title"></i>
+                            Công cụ & Công nghệ
+                        </h2>
+                        <p class="skill-group-description">Có kinh nghiệm xây dựng các ứng dụng web.</p>
+                    </div>
+
+                    <div class="tech-logos">
+                        <div class="tech-item tech-c">
+                            <span class="tech-text">C</span>
+                            <span class="tech-name">C</span>
+                        </div>
+                        <div class="tech-item tech-github">
+                            <span class="tech-text">Git</span>
+                            <span class="tech-name">GitHub</span>
+                        </div>
+                        <div class="tech-item tech-css">
+                            <span class="tech-text">CSS</span>
+                            <span class="tech-name">CSS</span>
+                        </div>
+                        <div class="tech-item tech-java">
+                            <span class="tech-text">Java</span>
+                            <span class="tech-name">Java</span>
+                        </div>
+                        <div class="tech-item tech-html">
+                            <span class="tech-text">HTML</span>
+                            <span class="tech-name">HTML</span>
+                        </div>
+                        <div class="tech-item tech-node">
+                            <span class="tech-text">Node</span>
+                            <span class="tech-name">Node.js</span>
+                        </div>
+                        <div class="tech-item tech-js">
+                            <span class="tech-text-dark">JS</span>
+                            <span class="tech-name">JavaScript</span>
+                        </div>
+                        <div class="tech-item tech-react">
+                            <span class="tech-text-dark">React</span>
+                            <span class="tech-name">React</span>
+                        </div>
+                        <div class="tech-item tech-mysql">
+                            <span class="tech-text">SQL</span>
+                            <span class="tech-name">MySQL</span>
+                        </div>
+                        <div class="tech-item tech-next">
+                            <span class="tech-text">Next</span>
+                            <span class="tech-name">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kỹ năng mềm  -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <h2 class="skill-group-title">
+                            <i class="fas fa-users icon-title"></i>
+                            Kỹ Năng Mềm
+                        </h2>
+                        <p class="skill-group-description">Các kỹ năng làm việc nhóm và giải quyết vấn đề.</p>
+                    </div>
+
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Khả năng tự học và nghiên
+                            cứu</li>
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Làm việc nhóm</li>
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Tư duy phản biện và giải
+                            quyết vấn đề</li>
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Quản lý thời gian và dự án
+                            cá nhân</li>
+                    </ul>
+                </div>
+                <!-- Ngoại ngữ  -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <h2 class="skill-group-title">
+                            <i class="fas fa-globe icon-title"></i>
+                            Ngoại ngữ & Khác
+                        </h2>
+                        <p class="skill-group-description">Các công cụ và ngôn ngữ hỗ trợ công việc.</p>
+                    </div>
+
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Tiếng Anh: Cơ bản</li>
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Sử dụng Git & Github</li>
+                        <li class="skill-item"><i class="fas fa-check-circle icon-list"></i> Khả năng làm việc độc lập
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </a>
+    </section>
+    <!-- End Kỹ năng & Chuyên môn -->
 
-      <a
-        href="https://github.com/Nguyenhien171/EcomFE"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="projects_cards">
-          <div class="projects_cards_wrapper">
-            <img
-              src="./assets/project4.jpg"
-              alt="project1"
-              class="projects_cards_img"
-            />
-          </div>
-          <div class="projects_cards_titles">
-            <h4>dự án 4</h4>
-            <h3>Jewelry Sales System At The Store</h3>
-          </div>
+    <!-- Begin Sở thích  -->
+    <section id="hobbies-section" class="section hobbies">
+        <div class="container text-center">
+            <h1 class="section-title">Sở Thích Cá Nhân</h1>
+            <p class="section-subtitle">
+                Những hoạt động giúp mình cân bằng cuộc sống và phát triển tư duy sáng tạo.
+            </p>
+
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <i class="fas fa-book-open"></i>
+                    <p class="hobby-name">Đọc sách</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-code"></i>
+                    <p class="hobby-name">Coding</p>
+                    <p class="hobby-desc">Tìm hiểu và ứng dụng các công nghệ mới như AI/ML vào dự án cá nhân.</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-camera"></i>
+                    <p class="hobby-name">Chụp ảnh</p>
+                </div>
+            </div>
         </div>
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
+    <!-- End Sở thích  -->
+
+    <!-- Begin Project  -->
+    <section id="projects-section" class="section projects">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="section-title">Các Dự Án Đã Thực Hiện</h1>
+                <p class="section-subtitle">
+                    Dự án cá nhân và đồ án tại trường giúp mình củng cố kỹ năng kỹ thuật và khả năng giải
+                    quyết vấn đề một cách sáng tạo.
+                </p>
+            </div>
+
+            <div class="project-grid">
+                <a href="https://github.com/Nguyenhien171/EcomFE" target="_blank" rel="noopener noreferrer"
+                    class="project-link-wrap">
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <img src="./images/ecommerce.jpg" alt="Ecommerce Frontend Project" class="project-image" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-tag">Front-End / Next.js</h4>
+                            <h3 class="project-title">Hệ thống E-commerce (FE)</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Danhtran07/gamehubplatform" target="_blank" rel="noopener noreferrer"
+                    class="project-link-wrap">
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <img src="./images/gamehub.jpg" alt="Gamehub Platform Project" class="project-image" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-tag">Back-End / Java Swing</h4>
+                            <h3 class="project-title">Game Hub Platform</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Katyusha-ski/LapTrinhJava" target="_blank" rel="noopener noreferrer"
+                    class="project-link-wrap">
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <img src="./images/speakingE.jpg" alt="AI English Project" class="project-image" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-tag">Mobile App / React Native</h4>
+                            <h3 class="project-title">Ứng dụng luyện nói tiếng Anh có AI</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Nguyenhien171/EcomFE" target="_blank" rel="noopener noreferrer"
+                    class="project-link-wrap">
+                    <div class="project-card">
+                        <div class="project-image-placeholder">
+                            <img src="./images/STrangsuc.jpg" alt="Jewelry Sales System" class="project-image" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-tag">Full-stack / Spring Boot/MySQL</h4>
+                            <h3 class="project-title">Hệ thống quản lý bán hàng trang sức</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End Project  -->
 
 
-  <!-- Footer -->
+    <!-- Begin Footer  -->
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+            <h2 class="footer-title">Liên hệ mình</h2>
+            <div class="social-links">
+                <a href="mailto:nguyennhienn1701@gmail.com" class="social-icon-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:0943123456" class="social-icon-link" aria-label="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://github.com/Nguyenhien171" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/hi%E1%BB%81n-nguy%E1%BB%85n-a49a1037a/" target="_blank"
+                    rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="copyright">© Nguyễn Hiền.</p>
+        </div>
+    </footer>
+    <!-- End Footer  -->
 
-<footer>
-  <div class="container">
-    <p>© Nguyễn Hiền</p>
-  </div>
-</footer>
 </body>
+
 </html>

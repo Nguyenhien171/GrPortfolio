@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Bùi Triệu Tín</title>
 
-    <link rel="icon" type="image/png" href="./images/Boai.png">
-
-
-    <!-- Thư viện Icon -->
+    <link rel="icon" type="image/png" href="./images/Boai.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,32 +13,36 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- Thư viện để làm hiệu ứng xuất hiện -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />    
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
     <!-- Navbar -->
-    <header class="header wow animate__bounceInDown animate__delay-1s">
-      <div class="container">
+     <header class="header">
+
         <nav class="navbar">
           <a href="#banner">
             <div class="navbar-name">
               <i class="fa-solid fa-earth-asia"></i>
-              <div>Buitrieutin</div>
+              <div>Bùi Triệu Tín</div>
             </div>
           </a>
+
+          <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
 
           <div class="navbar-menu">
             <ul>
               <li><a href="#information">Thông tin</a></li>
-              <li><a href="#career">Nghề nghiệp</a></li>
+              <li><a href="#career">Mục tiêu</a></li>
               <li><a href="#hobby">Sở thích</a></li>
               <li><a href="#skills">Kỹ năng</a></li>
               <li><a href="#certificates">Chứng chỉ</a></li>
@@ -50,349 +51,619 @@
             </ul>
           </div>
         </nav>
-      </div>
+
     </header>
     <!-- End Navbar -->
 
     <!-- Layout chính -->
     <main>
-      <!-- Banner -->
-      <section class="sectionOne wow animate__slideInDown" id="banner">
-        <div class="container">
-          <img src="./images/avatar1.jpg" alt="Avatar 1" />
-
-          <div class="content">
-            <div class="name wow animate__lightSpeedInLeft animate__delay-2s">Xin chào, mình là Tín</div>
-      
-            <div class="student wow animate__lightSpeedInRight animate__delay-3s" id="typing">
-            </div>
-          </div>
-
-          <a href="#information" class=" wow animate__fadeInUp animate__delay-4s">
-            <button class="button-banner">Khám phá</button></a
-          >
+      <div class="main-wrapper"> 
+        <div class="vd-wrapper">
+           <video
+            src="./video/3130182-uhd_3840_2160_30fps.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
         </div>
-      </section>
-      <!-- End Banner -->
 
-      <!-- Information -->
-      <section class="sectionTwo" id="information">
-        <div class="container">
-          <div class="wrapper">
-            <div class="info wow animate__zoomInLeft">
-              Xin chào! Mình là Bùi Triệu Tín, sinh viên ngành
-              <span class="object">Công nghệ thông tin</span> tại Đại học
-              Giao Thông Vận Tải TP.HCM. Mình có niềm đam mê với lập trình
-              web<span class="fullstack"> Fullstack</span>
-              và luôn mong muốn được học hỏi, trau dồi kỹ năng mỗi ngày.
+        <!-- Banner -->
+        <section class="sectionOne"  id="banner">
+         
+  
+          <div class="container">
+            <img src="./images/avatar1.jpg" alt="Avatar 1" />
+  
+            <div class="content">
+              <div class="name">Xin chào, mình là Tín</div>
+  
+              <div class="student" id="typing"></div>
             </div>
-
-            <div class="info-img  wow animate__zoomInRight">
-              <img src="./images/avatar3.jpg" alt="Info Image" />
-            </div>
+  
+            <a href="#information" class="">
+              <button class="button-banner">Khám phá</button></a
+            >
           </div>
-        </div>
-      </section>
-      <!-- End Information -->
+        </section>
+        <!-- End Banner -->
 
-      <!-- Career -->
-      <section class="sectionThree" id="career">
-        <div class="container">
-          <div class="wrapper">
-            <div class="career-img wow animate__rotateInDownLeft">
-              <img src="./images/avatar2.jpg" alt="Career Image" />
-            </div>
-
-            <div class="career-main wow animate__rotateInDownRight">
-              <span class="sort">Mục tiêu ngắn hạn:</span> Hoàn thiện kỹ năng
-              lập trình và xây dựng các dự án thực tế.<br />
-
-              <span class="long"> Mục tiêu dài hạn:</span> Trở thành lập trình
-              viên Fullstack chuyên nghiệp, đóng góp vào các sản phẩm mang giá
-              trị cho cộng đồng.
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Career -->
-
-      <!-- Hobby -->
-      <section class="sectionFour" id="hobby">
-        <div class="container">
-          <div class="wrapper">
-            <div class="hobby-main wow animate__backInUp">
-              <div class="hobby-item code">
-                <span><i class="fa-solid fa-terminal"></i></span>
-                <div class="content">
-                  <div class="name">Lập trình</div>
-                  <div class="sub code">Tôi đam mê khám phá và tìm hiểu những công nghệ mới trong lập trình web, không ngừng trau dồi kỹ năng để phát triển bản thân và sáng tạo ra những sản phẩm hữu ích.</div>
-                </div>
-              </div>
-
-               <div class="hobby-item film">
-                <span><i class="fa-solid fa-film"></i></span>
-                <div class="content">
-                  <div class="name">Xem phim</div>
-                  <div class="sub code">Tôi thích xem phim vào thời gian rảnh để giải trí, đồng thời học hỏi thêm về cách kể chuyện, tư duy sáng tạo và văn hóa từ nhiều quốc gia khác nhau.</div>
-                </div>
-              </div>
-
-               <div class="hobby-item music">
-                <span><i class="fa-solid fa-headphones"></i></span>
-                <div class="content">
-                  <div class="name">Nghe nhạc</div>
-                  <div class="sub music">Âm nhạc giúp tôi thư giãn, cân bằng cảm xúc sau những giờ học và làm việc căng thẳng, đồng thời mang lại nguồn cảm hứng mới trong công việc.</div>
-                </div>
-              </div>
-
-               <div class="hobby-item soccer">
-                <span><i class="fa-solid fa-futbol"></i></span>
-                <div class="content">
-                  <div class="name">Đá bóng</div>
-                  <div class="sub soccer">Tôi yêu thích thể thao, đặc biệt là đá bóng, vì nó giúp tôi rèn luyện sức khỏe, tinh thần đồng đội và khả năng phối hợp trong tập thể.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hobby-img wow animate__backInUp animate__delay-1s">
-              <img src="./images/avatar4.jpg" alt="Hobby Image" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Hobby -->
-
-      <!-- Skills -->
-      <section class="sectionFive" id="skills">
-        <div class="container">
-          <div class="skills-main">
-            <div class="content-top">
-              <div class="content-left wow animate__fadeInDown">
-                <div class="title">
-                  <span class="fullstack"> Fullstack </span>
-
-                  <span class="dev">Developer</span>
-                </div>
-
-                <div class="sub">
-                  Mình yêu thích việc tạo ra những sản phẩm kỹ thuật số hữu ích
-                  và mang lại trải nghiệm tốt cho người dùng. Với mỗi dòng code,
-                  mình luôn cố gắng học hỏi thêm điều mới và cải thiện kỹ năng
-                  để hoàn thiện bản thân hơn mỗi ngày.
-                </div>
-              </div>
-
-              <div class="content-right">
-                <div class="icon-list">
-                  <div class="icon frontend wow animate__jackInTheBox">
-                    <i class="fa-solid fa-code"></i>
-                    <div>Frontend</div>
+         <!-- Information -->
+        <section class="sectionTwo wow animate__fadeInUp" id="information">
+          <div class="container">
+            <div class="inner">
+  
+                <div class="box-head">Thông tin cá nhân</div>
+    
+                <div class="wrapper">
+                  <div class="info-img col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="swiper mySwiper parallax-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="slide-bg" style="background-image: url('./images/avatar3.jpg')"></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="slide-bg" style="background-image: url('./images/avatar2.jpg')"></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="slide-bg" style="background-image: url('./images/avatar4.jpg')"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="icon backend wow animate__jackInTheBox animate__delay-1s">
-                    <i class="fa-solid fa-server"></i>
-                    <div>Backend</div>
+
+                <div class="info-main col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                  <div class="info">
+                      <div class="info-item"><strong>Họ và tên:</strong> Bùi Triệu Tín</div>
+                      <div class="info-item"><strong>Giới tính:</strong> Nam</div>
+                      <div class="info-item"><strong>Tuổi:</strong> 20</div>
+                      <div class="info-item"><strong>Ngày sinh:</strong> 12/10/2005</div>
+                      <div class="info-item"><strong>Ngành học:</strong> Công nghệ thông tin</div>
+                      <div class="info-item">
+                        <strong>Trường:</strong> Đại học Giao Thông Vận Tải TP.Hồ Chí Minh
+                      </div>
+                      <div class="info-item"><strong>Định hướng tương lai:</strong> FullStack</div>
+                      <div class="info-item"><strong>Giới thiệu:</strong> Mình là Bùi Triệu Tín – sinh viên năm 3 yêu thích lập trình web Fullstack. Mình thích việc xây dựng các ứng dụng hoàn chỉnh từ giao diện đến hệ thống phía sau.</div>
+                      <div class="info-item"><strong>Mục tiêu:</strong> Mục tiêu của mình là trở thành một lập trình viên sáng tạo, tạo ra sản phẩm có trải nghiệm người dùng tốt và mang lại giá trị thực tế.k</div>
                   </div>
-                  <div class="icon database wow animate__jackInTheBox animate__delay-2s">
-                    <i class="fa-solid fa-database"></i>
-                    <div>Database</div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Information -->
+
+          <!-- Career -->
+        <section class="sectionThree wow animate__fadeInUp" id="career">
+          <div class="container">
+            <div class="inner">
+              <div class="box-head">Mục tiêu nghề nghiệp</div>
+
+              <div class="wrapper">
+               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
+                  <div class="target-item">
+                    <div class="title">
+                      <span>Nền tảng vững chắc – Xây gốc vững để phát triển toàn diện</span>
+                      <span><i class="fa-solid fa-seedling"></i></span>
+                    </div>
+  
+                    <div class="sub">Mình đang từng bước hoàn thiện kỹ năng lập trình qua các dự án thực tế — từ việc tạo nên những giao diện thân thiện, tinh tế cho người dùng, đến việc xây dựng hệ thống logic và ổn định phía sau. Mục tiêu ngắn hạn là làm chủ Front-end (HTML, CSS, JavaScript, ReactJS) và nắm vững Back-end (Node.js, Express, Database) để hiểu trọn vẹn một ứng dụng web hoạt động như thế nào.</div>
                   </div>
-                  <div class="icon web wow animate__jackInTheBox animate__delay-3s"><i class="fa-solid fa-globe"></i>
-                  <div>Web3</div>
+               </div>
+
+               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
+                  <div class="target-item">
+                    <div class="title">
+                      <span>Tư duy sáng tạo – Kỹ năng làm việc nhóm</span>
+                      <span><i class="fa-solid fa-lightbulb"></i></span>
+                    </div>
+  
+                    <div class="sub">Mình không chỉ muốn viết code chạy đúng, mà còn muốn viết code đẹp, tối ưu, dễ hiểu và mang lại trải nghiệm tốt nhất cho người dùng. Trong quá trình học tập và làm việc nhóm, mình rèn luyện kỹ năng giao tiếp, chia sẻ ý tưởng và giải quyết vấn đề thực tế — những yếu tố quan trọng để trở thành một lập trình viên toàn diện.</div>
+                  </div>
+               </div>
+
+               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
+                  <div class="target-item">
+                    <div class="title">
+                      <span>Hướng tới tương lai – Xây dựng giá trị thật</span>
+                      <span><i class="fa-solid fa-rocket"></i></span>
+                    </div>
+  
+                    <div class="sub">Mục tiêu dài hạn của mình là trở thành Fullstack Developer chuyên nghiệp, có khả năng tham gia vào toàn bộ quy trình phát triển sản phẩm — từ ý tưởng, thiết kế, đến triển khai và bảo trì. Mình muốn tạo ra những sản phẩm mang lại giá trị thật cho cộng đồng, vừa hữu ích, vừa mang đậm dấu ấn sáng tạo cá nhân.</div>
+                  </div>
+               </div>
+              </div>
+
+              <div class="col-xxl-12 col-xl-12 col-lg-12">
+                <div class="sub-main">
+                  <div><i class="fa-solid fa-arrows-to-circle"></i></div>
+                  <div>Bởi với mình, lập trình không chỉ là công việc — mà là hành trình tạo ra giá trị và không ngừng phát triển bản thân.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <!-- End Career -->
+
+          <!-- Hobby -->
+        <section class="sectionFour wow animate__fadeInUp" id="hobby">
+          <div class="container">
+           <div class="inner">
+            <div class="box-head">Sở thích</div>
+
+            <div class="wrapper">
+              <div class="hobby-main">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="hobby-item code">
+                    <span><i class="fa-solid fa-terminal"></i></span>
+                    <div class="content">
+                      <div class="name">Lập trình</div>
+                      <div class="sub code">Tôi đam mê khám phá và tìm hiểu những công nghệ mới trong lập trình web, không ngừng trau dồi kỹ năng để phát triển bản thân và sáng tạo ra những sản phẩm hữu ích.</div>
+                    </div>
+                  </div>
+                </div>
+  
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="hobby-item film">
+                    <span><i class="fa-solid fa-film"></i></span>
+                    <div class="content">
+                      <div class="name">Xem phim</div>
+                      <div class="sub code">Tôi thích xem phim vào thời gian rảnh để giải trí, đồng thời học hỏi thêm về cách kể chuyện, tư duy sáng tạo và văn hóa từ nhiều quốc gia khác nhau.</div>
+                    </div>
+                  </div>
+               </div>
+  
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="hobby-item music">
+                    <span><i class="fa-solid fa-headphones"></i></span>
+                    <div class="content">
+                      <div class="name">Nghe nhạc</div>
+                      <div class="sub music">Âm nhạc giúp tôi thư giãn, cân bằng cảm xúc sau những giờ học và làm việc căng thẳng, đồng thời mang lại nguồn cảm hứng mới trong công việc.</div>
+                    </div>
+                  </div>
+               </div>
+  
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="hobby-item soccer">
+                    <span><i class="fa-solid fa-futbol"></i></span>
+                    <div class="content">
+                      <div class="name">Đá bóng</div>
+                      <div class="sub soccer">Tôi yêu thích thể thao, đặc biệt là đá bóng, vì nó giúp tôi rèn luyện sức khỏe, tinh thần đồng đội và khả năng phối hợp trong tập thể.</div>
+                    </div>
+                  </div>
+               </div>
+              </div>
+            </div>
+           </div>
+          </div>
+        </section>
+        <!-- End Hobby -->
+
+        <!-- Skills -->
+        <section class="sectionFive wow animate__fadeInUp" id="skills">
+          <div class="container">
+            <div class="skills-main">
+
+            <div class="box-head">Kỹ năng</div>
+
+            <div class="content-bottom">
+              <div class="content-item">
+                <div class="title">Ngôn ngữ lập trình</div>
+
+                <div class="row justify-content-center text-center g-4">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon">
+                      <img src="./images/html.png" alt="HTML" />
+                      <div>HTML</div>
+                      <div class="progress html">90%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon">
+                      <img src="./images/css.png" alt="CSS" />
+                      <div>CSS</div>
+                      <div class="progress css">90%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon">
+                      <img src="./images/js.png" alt="JavaScript" />
+                      <div>JavaScript</div> 
+                      <div class="progress js">80%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon">
+                      <img src="./images/sql.png" alt="MySQL" />
+                      <div>MySQL</div>
+                      <div class="progress sql">80%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon">
+                      <img src="./images/c++.png" alt="C++" />
+                      <div>C++</div>
+                      <div class="progress c">85%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-item">
+                <div class="title">Công cụ & Framework</div>
+
+                <div class="row justify-content-center framework">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon framework">
+                      <img src="./images/react.png" alt="React" />
+                      <div>React</div>
+                      <div class="progress react">70%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon framework">
+                      <img src="./images/git.png" alt="Git" />
+                      <div>Git</div>
+                      <div class="progress git">80%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon framework">
+                      <img src="./images/json.png" alt="Json" />
+                      <div>Json</div> 
+                      <div class="progress json">95%</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon framework">
+                      <img src="./images/render.png" alt="Render" />
+                      <div>Render</div>
+                      <div class="progress render">60%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="content-item">
+                <div class="title">Kỹ năng mềm</div>
+
+                <div class="row justify-content-center ">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon soft">
+                      <i class="fa-solid fa-brain"></i> 
+                      <div>Tự học</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon soft">
+                      <i class="fa-solid fa-handshake"></i>
+                      <div>Làm việc nhóm</div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon soft">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <div>Tìm hiểu</div> 
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <div class="icon soft">
+                      <i class="fa-solid fa-comments"></i>
+                      <div>Giao tiếp</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+        <!-- End Skills -->
 
-          <div class="content-bottom">
-            <div class="title wow animate__zoomIn">Công nghệ chính</div>
-            <div class="icon-list">
-              <div class="icon wow animate__flipInY"><i class="fa-brands fa-html5" style="color: #DD5029;"></i>
-              <div>HTML</div>
-              </div>
-              <div class="icon wow animate__flipInY animate__delay-1s"><i class="fa-brands fa-css3-alt" style="color: #185bcd;"></i>
-              <div>CSS</div>
-              </div>
-              <div class="icon wow animate__flipInY animate__delay-2s"><i class="fa-brands fa-js" style="color: #FFD43B;"></i>
-              <div>JavaScript</div>
-              </div>
-              <div class="icon wow animate__flipInY animate__delay-3s"><i class="fa-brands fa-react" style="color: #74C0FC;"></i>
-              <div>React</div>
-              </div>
-              <div class="icon wow animate__flipInY animate__delay-4s"><i class="fa-brands fa-git-alt" style="color: #d73c3c;"></i>
-              <div>Git</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Skills -->
-
-      <!-- Certificates -->
-       <section class="sectionSix" id = "certificates">
-        <div class="container">
-          <div class="title wow animate__slideInUp">
-            <div class="title-main">Chứng chỉ</div>
-            <p>Không có</p>
-          </div>
-        </div>
-       </section>
-      <!-- End Certificates -->
-
-      <!-- Projects -->
-       <section class="sectionSeven" id = "projects">
-        <div class="container">
-         <div class="wrapper">
-            <div class="project-common wow animate__fadeInBottomLeft">
-              <div class="title ">SoftwareM4 – Frontend thuần (HTML & CSS)</div>
-              <p class="sub"> Dự án giao diện tĩnh được xây dựng hoàn toàn bằng <span class="htmlcss">HTML & CSS</span>, không dùng framework hay thư viện.</p>
-              <p class="sub">
-                <span class="target"> Mục tiêu:</span>
-                 luyện tập layout responsive, grid/flex, và tối ưu trải nghiệm trên nhiều thiết bị.
-              </p> 
-              <p class="sub">
-                <span class="demo">Link demo: </span>
-                <a class="link" href = "https://software-boai.vercel.app/" target="_blank">https://software-boai.vercel.app/</a>
-              </p>
-            </div>
-
-            <div class="project-common  wow animate__fadeInBottomLeft">
-              <div class="title title-two">Softy Pinko – Dự án giao diện với Bootstrap</div>
-              <p class="sub">Dự án trang web giao diện sử dụng <span class="bootstrap">Bootstrap</span> để tận dụng hệ thống lưới và các component có sẵn. </p>
-              <p class="sub">
-                <span class="target">Mục tiêu:</span> 
-                học cách sử dụng Bootstrap để tăng tốc phát triển UI, tùy chỉnh theme và layout linh hoạt. 
-              </p>
-              <p class="sub">
-                <span class="demo">Link demo: </span>
-                <a class="link" href = "https://softypinkoboai.vercel.app/" target="_blank">https://softypinkoboai.vercel.app/</a>
-              </p>
-            </div>
-         </div>
-        </div>
-       </section>
-      <!-- End Projects -->
-
-      <!-- Contact -->
-       <section class="sectionEight" id = "contact">
-        <div class="container">
-          <div class="wrapper">
-            <div class="title wow animate__fadeIn">
-              <div class="title-main">Kết nối với mình</div>
-              <div class="sub">
-                <div>Có ý tưởng hoặc dự án muốn thảo luận? Đừng ngần ngại liên hệ với mình.</div>
-                <div> Mình luôn sẵn sàng lắng nghe và hợp tác!</div>
+        <!-- Certificates -->
+        <section class="sectionSix wow animate__fadeInUp" id = "certificates">
+          <div class="container">
+            <div class="inner">
+              <div class="box-head">Chứng chỉ</div>
+              
+             <div class="certi-list">
+                <div class="col-12">
+                  <div class="certi-item">
+                    <div class="title">Front-End Fundamentals Certificate – SoloLearn</div>
+                    <div class="sub">Xác nhận hoàn thành khóa học HTML, CSS, JavaScript cơ bản.</div>
+                  </div>
+                </div>
+  
+                  <div class="col-12">
+                  <div class="certi-item">
+                    <div class="title">Responsive Web Design Certification – freeCodeCamp</div>
+                    <div class="sub">Xây dựng giao diện tương thích đa thiết bị, chuẩn SEO.</div>
+                  </div>
+                </div>
+  
+                  <div class="col-12">
+                  <div class="certi-item">
+                    <div class="title">JavaScript Algorithms and Data Structures – freeCodeCamp</div>
+                    <div class="sub">Thành thạo logic lập trình, thuật toán và xử lý dữ liệu bằng JS.</div>
+                  </div>
+                </div>
+  
+                <div class="col-12">
+                  <div class="certi-item">
+                    <div class="title">React Developer Certificate – Meta (Coursera)</div>
+                    <div class="sub">Hiểu về component, state, props, hooks, và quản lý luồng dữ liệu trong React.</div>
+                  </div>
+                </div>
              </div>
             </div>
+          </div>
+        </section>
+        <!-- End Certificates -->
 
-            <div class="contact-me">
-              <div class="details wow animate__backInLeft">
-                <div class="title-bottom">Liên hệ mình</div>
+        <!-- Projects -->
+        <section class="sectionSeven wow animate__fadeInUp" id = "projects">
+          <div class="container">
+            <div class="inner">
+              <div class="box-head">Dự án</div>
 
-                <div class="contact-item">
-                  <div class="icon icon-email">
-                    <i class="fa-regular fa-envelope"></i>
-                  </div>
+              <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-6">
+                  <div class="project-item">
+                    <img src = "./images/software.png" alt ="Software"/>
 
-                  <div class="content">
-                    <div class="name">Email</div>
-                    <a class="link link-email" href="https://mail.google.com/mail/u/1/#inbox" target="_blank">bttboai@gmail.com</a>
-                  </div>
-                </div>
-
-                  <div class="contact-item">
-                  <div class="icon icon-facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                  </div>
-
-                  <div class="content">
-                    <div class="name">Facebook</div>
-                    <a class="link link-facebook" href="https://www.facebook.com/trieu.tin.794833/" target="_blank">@trieutin</a>
-                  </div>
-                </div>
-
-                 <div class="contact-item">
-                  <div class="icon icon-instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                  </div>
-
-                  <div class="content">
-                    <div class="name">Instagram</div>
-                    <a class="link link-instagram" href="https://www.instagram.com/_trwtn/?igsh=OTVybWdtcHE0a3gw&utm_source=qr" target="_blank">@_trwtn</a>
+                    <div class="title">SoftwareM4</div>
+                    <div class="sub">
+                      SoftwareM4 là một giao diện web tĩnh được thiết kế và xây dựng hoàn toàn bằng HTML & CSS, không sử dụng bất kỳ framework hay thư viện hỗ trợ nào như Bootstrap hay Tailwind.  
+                    </div>
+                    <div class="tag">
+                      <div>HTML</div>
+                      <div>CSS</div>
+                    </div>
+                    <a href="https://software-boai.vercel.app/" target="_blank">
+                      <button class="project-btn">
+                        <span><i class="fa-solid fa-laptop"></i></span>
+                        <span>Live demo</span>
+                      </button>
+                    </a>
                   </div>
                 </div>
 
-                 <div class="contact-item">
-                  <div class="icon icon-github">
-                    <i class="fa-brands fa-github"></i>
-                  </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-6">
+                  <div class="project-item">
+                    <img src = "./images/softy.png" alt ="Softy-Pinko"/>
 
-                  <div class="content">
-                    <div class="name">Github</div>
-                    <a class="link link-github" href="https://github.com/t-boai" target="_blank">@t-boai</a>
+                    <div class="title">Softy Pinko</div>
+                    <div class="sub">
+                      Softy Pinko là một dự án giao diện web được phát triển bằng Bootstrap, tận dụng sức mạnh của hệ thống lưới (Grid System) để xây dựng nên một trang web hiện đại, chuẩn responsive và dễ mở rộng. 
+                    </div>
+                    <div class="tag">
+                      <div>HTML</div>
+                      <div>CSS</div>
+                      <div>Bootstrap</div>
+                    </div>
+                    <a href="https://softypinkoboai.vercel.app/" target="_blank">
+                      <button class="project-btn">
+                        <span><i class="fa-solid fa-laptop"></i></span>
+                        <span>Live demo</span>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6">
+                  <div class="project-item">
+                    <img src = "./images/covid.png" alt ="Covid"/>
+
+                    <div class="title">COVID-Map</div>
+                    <div class="sub">
+                      OVID-Map-Dashboard là một bảng điều khiển trực quan (dashboard) giúp hiển thị dữ liệu dịch bệnh COVID-19 trên bản đồ và các biểu đồ liên quan.
+                    </div>
+                    <div class="tag">
+                      <div>HTML</div>
+                      <div>CSS</div>
+                      <div>Javscript</div>
+                    </div>
+                    <a href="https://covid-map-dashboard.netlify.app/" target="_blank">
+                      <button class="project-btn">
+                        <span><i class="fa-solid fa-laptop"></i></span>
+                        <span>Live demo</span>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6">
+                  <div class="project-item">
+                    <img src = "./images/timehave.png" alt ="Time Have"/>
+
+                    <div class="title">Time to Have</div>
+                    <div class="sub">
+                     Time to Have More Fun là một dự án giao diện/web app được thiết kế với mục đích chủ đạo là mang lại trải nghiệm thú vị, thân thiện và dễ truy cập.  
+                    </div>
+                    <div class="tag">
+                      <div>HTML</div>
+                      <div>CSS</div>
+                      <div>Javascript</div>
+                    </div>
+                    <a href="https://time-to-have-more-fun.vercel.app/" target="_blank">
+                      <button class="project-btn">
+                        <span><i class="fa-solid fa-laptop"></i></span>
+                        <span>Live demo</span>
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
-
-              <div class="form-contact wow animate__backInRight">
-                <form>
-                  <div class="form-info">
-                    <div class="form-input">
-                      <div class="input">
-                        <label>Tên của bạn</label>
-                        <input required placeholder="Nguyễn Văn A" name = "HoTen"/>
-                      </div>
-
-                      <div class="input">
-                        <label>Email/SĐT</label>
-                        <input required placeholder="email@...hoặc 09..." name = "Email" type="email"/>
-                      </div>
-                    </div>
-
-                    <div class="form-textarea">
-                      <div class="textarea">
-                        <label>Nội dung</label>
-                        <textarea placeholder="Chia sẻ ý tưởng hoặc dự án của bạn..." name = "Noi dung"></textarea>
-                      </div>
-                    </div>
-
-                    <button type="submit" class="button">
-                      <span>
-                        <i class="fa-regular fa-paper-plane"></i>
-                        Gửi tin nhắn
-                    </span>
-                    </button>
-                  </div>
-                </form>
-            </div>
             </div>
           </div>
-        </div>
-       </section>
-      <!-- End Contact -->
+        </section>
+        <!-- End Projects -->
+
+        <!-- Contact -->
+        <section class="sectionEight wow animate__fadeInUp" id = "contact">
+          <div class="container">
+            <div class="wrapper">
+              <div class="title">
+                <div class="box-head">Liên hệ</div>
+                <div class="sub">
+                  <div>Có ý tưởng hoặc dự án muốn thảo luận? Đừng ngần ngại liên hệ với mình.</div>
+                  <div> Mình luôn sẵn sàng lắng nghe và hợp tác!</div>
+               </div>
+              </div>
+  
+              <div class="contact-me">
+                <div class="row justify-content-center">
+                  <div class="col-xxl-6 col-xl-6 col-lg-6">
+                      <div class="details">            
+                        <a href = "https://mail.google.com/mail/u/1/#inbox" target="_blank">
+                          <div class="contact-item">
+                            <div class="icon icon-email">
+                              <i class="fa-regular fa-envelope"></i>
+                            </div>
+                        </a>
+        
+                          <div class="content">
+                            <div class="name">Email</div>
+                            <a class="link link-email" href="https://mail.google.com/mail/u/1/#inbox" target="_blank">bttboai@gmail.com</a>
+                          </div>
+                        </div>
+        
+                          <div class="contact-item">
+                          <a href="https://www.facebook.com/trieu.tin.794833/" target="_blank">
+                            <div class="icon icon-facebook">
+                              <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                          </a>
+        
+                          <div class="content">
+                            <div class="name">Facebook</div>
+                            <a class="link link-facebook" href="https://www.facebook.com/trieu.tin.794833/" target="_blank">@trieutin</a>
+                          </div>
+                        </div>
+        
+                        <div class="contact-item">
+                          <a href="https://www.instagram.com/_trwtn/?igsh=OTVybWdtcHE0a3gw&utm_source=qr" target="_blank">
+                            <div class="icon icon-instagram">
+                              <i class="fa-brands fa-instagram"></i>
+                            </div>
+                          </a>
+        
+                          <div class="content">
+                            <div class="name">Instagram</div>
+                            <a class="link link-instagram" href="https://www.instagram.com/_trwtn/?igsh=OTVybWdtcHE0a3gw&utm_source=qr" target="_blank">@_trwtn</a>
+                          </div>
+                        </div>
+        
+                        <div class="contact-item">
+                          <a href="https://github.com/t-boai" target="_blank">
+                            <div class="icon icon-github">
+                              <i class="fa-brands fa-github"></i>
+                            </div>
+                          </a>
+        
+                          <div class="content">
+                            <div class="name">Github</div>
+                            <a class="link link-github" href="https://github.com/t-boai" target="_blank">@t-boai</a>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+          
+                  <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="form-contact">
+                      <form>
+                        <div class="form-info">
+                          <div class="form-input">
+                            <div class="input">
+                              <label>Tên của bạn</label>
+                              <input required placeholder="Nguyễn Văn A" name = "HoTen"/>
+                            </div>
+      
+                            <div class="input">
+                              <label>Email/SĐT</label>
+                              <input required placeholder="email@...hoặc 09..." name = "Email" type="email"/>
+                            </div>
+                          </div>
+      
+                          <div class="form-textarea">
+                            <div class="textarea">
+                              <label>Nội dung</label>
+                              <textarea placeholder="Chia sẻ ý tưởng hoặc dự án của bạn..." name = "Noi dung"></textarea>
+                            </div>
+                          </div>
+      
+                          <button type="submit" class="button">
+                            <span>
+                              <i class="fa-regular fa-paper-plane"></i>
+                              Gửi tin nhắn
+                          </span>
+                          </button>
+                        </div>
+                      </form>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Contact -->
+      </div>  
     </main>
     <!-- End Layout -->
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-       <div class="wrapper">
-          <div class="content-left wow animate__zoomIn">
+      <div class="wrapper">
+          <div class="content-left">
             <a href = "#banner"><div class="name">Bùi Triệu Tín</div></a>
             <div class="sub">© 2025 All rights reserved.</div>
           </div>
   
-          <div class="content-right wow animate__zoomIn">
+          <div class="content-right">
             <a class="mail" href="https://mail.google.com/mail/u/1/#inbox" target="_blank"><i class="fa-regular fa-envelope"></i></a>
             <a class="fb" href="https://www.facebook.com/trieu.tin.794833/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
             <a class="contact" href = "#contact">Liên hệ</a>
+            <a class="up" href="#banner"><i class="fa-solid fa-arrow-up"></i></a>
           </div>
-       </div>
       </div>
     </footer>
     <!-- End Footer -->
 
-    <!-- Link script của thư viện làm hiệu ứng xuất hiện -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <!-- Hiệu ứng đánh chữ -->
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.19.0/dist/core.js"></script>
+    <script>
+      setTimeout(() => {
+        const target = document.getElementById("typing");
+        const typewriter = new Typewriter(target, {
+          loop: true,
+          delay: 80, // tốc độ gõ
+          cursor: "|",
+        });
+
+        typewriter
+          .typeString("Sinh viên ")
+          .typeString(
+            'trường <span class="student highlightA">ĐH Giao Thông Vận Tải</span>'
+          )
+          .pauseFor(1500) //Thời gian dừng
+          .deleteChars(28) //Xóa 28 kí tự từ "trường -> GTVT"
+          .typeString(
+            'ngành <span class="student highlightB">Công nghệ thông tin</span>'
+          )
+          .pauseFor(1500)
+          .start();
+      }, 4000);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW({
           boxClass: 'wow',
@@ -402,27 +673,8 @@
           live: true
        }).init();
     </script>
-
-<!-- Hiệu ứng đánh chữ -->
-  <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.19.0/dist/core.js"></script>
-  <script>
-    setTimeout(() => {
-      const target = document.getElementById('typing');
-      const typewriter = new Typewriter(target, {
-        loop: true,
-        delay: 80,   // tốc độ gõ
-        cursor: '|'
-      });
-
-      typewriter
-        .typeString('Sinh viên ')
-        .typeString('trường <span class="student highlightA">ĐH Giao Thông Vận Tải</span>')
-        .pauseFor(1500) //Thời gian dừng
-        .deleteChars(28) //Xóa 28 kí tự từ "trường -> GTVT"
-        .typeString('ngành <span class="student highlightB">Công nghệ thông tin</span>')
-        .pauseFor(1500)
-        .start();
-    }, 4000); 
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/active.js"></script>
   </body>
 </html>

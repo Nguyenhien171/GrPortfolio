@@ -1,0 +1,128 @@
+// navbar.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".navbar-menu ul li a");
+  const sections = document.querySelectorAll("section");
+
+  // --- Khi click vào link ---
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      // Bỏ active ở tất cả link
+      navLinks.forEach((l) => l.classList.remove("active"));
+      // Thêm active cho link được click
+      link.classList.add("active");
+    });
+  });
+
+  // --- Khi scroll ---
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      const target = link.getAttribute("href").replace("#", "");
+      if (target === currentSection) {
+        link.classList.add("active");
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".navbar-menu ul li a");
+  const sections = document.querySelectorAll("section");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navbarMenu = document.querySelector(".navbar-menu");
+
+  // Toggle menu khi click vào icon ba gạch
+  menuToggle.addEventListener("click", () => {
+    navbarMenu.classList.toggle("active");
+  });
+
+  // Khi click vào link trong menu => ẩn menu (trên mobile)
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navbarMenu.classList.remove("active");
+    });
+  });
+
+  // --- Khi click vào link: giữ active ---
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+  // --- Khi scroll ---
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      const target = link.getAttribute("href").replace("#", "");
+      if (target === currentSection) {
+        link.classList.add("active");
+      }
+    });
+  });
+});
+
+const swiper = new Swiper(".parallax-swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 0,
+    depth: 150,
+    modifier: 1,
+    slideShadows: true,
+  },
+  speed: 1000,
+});
+
+ScrollReveal({
+  reset: true, // Cho phép hiệu ứng xuất hiện lại khi scroll lên
+  distance: "60px",
+  duration: 1000,
+  delay: 100,
+});
+
+// Hiệu ứng cho header và footer
+ScrollReveal().reveal("header", { origin: "top" });
+ScrollReveal().reveal("footer", { origin: "bottom" });
+
+// Hiệu ứng cho 8 section
+ScrollReveal().reveal(".sectionOne", { origin: "left" });
+ScrollReveal().reveal(".sectionTwo", { origin: "right" });
+ScrollReveal().reveal(".sectionThree", { origin: "bottom" });
+ScrollReveal().reveal(".sectionFour", { origin: "top" });
+ScrollReveal().reveal(".sectionFive", { origin: "left" });
+ScrollReveal().reveal(".sectionSix", { origin: "right" });
+ScrollReveal().reveal(".sectionSeven", { origin: "bottom" });
+ScrollReveal().reveal(".sectionEight", { origin: "top" });

@@ -8,46 +8,14 @@
     <link rel="stylesheet" href="./CSS/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-        // Chức năng bật/tắt menu mobile
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-
-            if (menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        }
-
-        // HÀM CHẠY HIỆU ỨNG TYPING
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const typingElement = document.getElementById('typing-text');
-
-            // 1. Thêm class container để bắt đầu animation CSS
-            typingElement.classList.add('typing-text-container');
-
-            // 2. Lắng nghe sự kiện kết thúc animation
-            typingElement.addEventListener('animationend', (e) => {
-                // Chỉ chạy khi animation 'typing' kết thúc
-                if (e.animationName === 'typing') {
-                    // 3. Xóa đường viền (con trỏ)
-                    typingElement.style.borderRight = 'none';
-
-                    // 4. (Rất Quan trọng) Dừng hẳn animation nhấp nháy để nó không quay lại
-                    // Cần ghi đè lại thuộc tính animation của CSS
-                    typingElement.style.animation = 'typing 4s steps(40, end) forwards'; // Giữ lại animation typing đã kết thúc
-                }
-            });
-        });
-    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="antialiased">
-    <!-- Begin Navbar  -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
@@ -56,17 +24,17 @@
                 </div>
 
                 <div class="desktop-menu">
-                    <a href="#about-me-section" class="nav-link">Mục Tiêu</a>
-                    <a href="#experience-section" class="nav-link">Kinh Nghiệm</a>
-                    <a href="#skills-section" class="nav-link">Kỹ Năng</a>
-                    <a href="#projects-section" class="nav-link">Dự Án</a>
-                    <a href="#footer" class="nav-link-primary">Liên Hệ</a>
+                    <a href="#about-me-section" class="nav-link" data-section="about-me-section">Mục Tiêu</a>
+                    <a href="#experience-section" class="nav-link" data-section="experience-section">Kinh Nghiệm</a>
+                    <a href="#skills-section" class="nav-link" data-section="skills-section">Kỹ Năng</a>
+                    <a href="#projects-section" class="nav-link" data-section="projects-section">Dự Án</a>
+                    <a href="#footer" class="nav-link nav-link-primary" data-section="footer">Liên Hệ</a>
                 </div>
 
                 <div class="mobile-menu-button">
                     <button onclick="toggleMenu()" type="button" aria-label="Open main menu">
                         <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-bars" id="mobile-menu-icon"></i>
                     </button>
                 </div>
             </div>
@@ -80,14 +48,11 @@
             <a href="#footer" onclick="toggleMenu()" class="nav-link-mobile nav-link-mobile-primary">Liên Hệ</a>
         </div>
     </nav>
-    <!-- End Navbar  -->
-
-    <!-- Begin Header  -->
     <header id="header" class="header-banner">
         <div class="container">
             <div class="header-grid">
 
-                <div class="header-info-left">
+                <div class="header-info-left" data-aos="fade-right" data-aos-duration="1000">
                     <div class="avatar-placeholder">
                         <img src="./images/avartar.jpg" alt="Nguyễn Thị Thu Hiền Avatar" class="avatar-img">
                     </div>
@@ -114,8 +79,7 @@
                         </p>
                     </div>
                 </div>
-                <!-- Begin phần Thông tin liên hệ  -->
-                <div class="header-contact-right">
+                <div class="header-contact-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <h2 class="contact-title">
                         <i class="fas fa-phone-alt contact-icon"></i>
                         Thông tin liên hệ
@@ -127,7 +91,7 @@
                         </p>
                         <p class="contact-item">
                             <i class="fas fa-phone contact-icon"></i>
-                            Số điện thoại: <span class="contact-detail-value">0943123456</span>
+                            Số điện thoại: <a href="tel:+84943123456" class="contact-detail-value">0943123456</a>
                         </p>
                         <a href="https://github.com/Nguyenhien171" target="_blank" rel="noopener noreferrer"
                             class="profile-link">
@@ -135,47 +99,40 @@
                         </a>
                     </div>
                 </div>
-                <!-- End phần Thông tin liên hệ  -->
             </div>
         </div>
     </header>
-    <!-- End Header  -->
-
-    <!-- Begin Mục Tiêu Nghề Nghiệp -->
     <section id="about-me-section" class="section about-me">
         <div class="container text-center">
-            <h1 class="section-title">Mục Tiêu Nghề Nghiệp</h1>
-            <p id="typing-text" class="section-subtitle">
+            <h2 class="section-title" data-aos="fade-up">Mục Tiêu Nghề Nghiệp</h2>
+            <p id="about-me-subtitle" class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                 Là một Developer với kiến thức nền tảng về lập trình và kinh nghiệm thực chiến trong
                 các dự án sử dụng React/Next.js.
             </p>
-            <div class="goal-list">
+            <div class="goal-list" data-aos="fade-up" data-aos-delay="200">
                 <p>1. Ngắn hạn (6 tháng): Trở thành thành viên chính thức trong đội ngũ phát triển, thuần thục các
                     quy trình Agile/Scrum và tối ưu hiệu năng Front-End.</p>
                 <p>2. Dài hạn (3 năm): Trở thành một Full-stack Developer (Web hoặc Mobile) có khả năng thiết kế hệ
                     thống và dẫn dắt các dự án nhỏ.</p>
             </div>
-            <div class="section-action">
+            <div class="section-action" data-aos="zoom-in" data-aos-delay="300">
                 <a href="#projects-section" class="button-primary">
                     Xem Dự Án
                 </a>
             </div>
         </div>
     </section>
-    <!-- End Mục Tiêu Nghề Nghiệp -->
-
-    <!-- Begin Thông Tin Nghề Nghiệp & Kinh Nghiệm -->
     <section id="experience-section" class="section experience">
         <div class="container">
             <div class="text-center mb-12">
-                <h1 class="section-title">Thông Tin Nghề Nghiệp & Kinh Nghiệm</h1>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-aos="fade-up">Thông Tin Nghề Nghiệp & Kinh Nghiệm</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                     Các vị trí đã làm và kinh nghiệm tích lũy trong quá trình học tập và làm việc nhóm.
                 </p>
             </div>
 
             <div class="timeline-grid">
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
                     <h3 class="timeline-title">Phát triển Web (Frontend)</h3>
                     <ul class="timeline-responsibilities">
                         <li><i class="fas fa-caret-right"></i> Phát triển giao diện người dùng bằng React và Tailwind
@@ -186,7 +143,7 @@
                             thống Ecommerce.</li>
                     </ul>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <h3 class="timeline-title">Lập trình ứng dụng</h3>
                     <ul class="timeline-responsibilities">
                         <li><i class="fas fa-caret-right"></i> Sử dụng React Native để xây dựng ứng dụng luyện nói tiếng
@@ -198,59 +155,52 @@
             </div>
         </div>
     </section>
-    <!-- End Thông Tin Nghề Nghiệp & Kinh Nghiệm -->
-
-    <!-- Begin Chứng Chỉ và Giải Thưởng -->
     <section id="certificates-section" class="section certificates">
         <div class="container text-center">
-            <h1 class="section-title">Chứng Chỉ & Giải Thưởng</h1>
-            <p class="section-subtitle">
+            <h2 class="section-title" data-aos="fade-up">Chứng Chỉ & Giải Thưởng</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                 Các thành tích đã đạt được và chứng chỉ chuyên môn.
             </p>
 
             <div class="cert-grid">
-                <div class="cert-item">
-                    <i class="fas fa-medal"></i>
-                    <p class="cert-name">Chứng chỉ TOEIC/IELTS</p>
-                    <p class="cert-detail">Chưa có</p>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-book-reader"></i>
+                    <p class="cert-name">Tiếng Anh Giao Tiếp</p>
+                    <p class="cert-detail">Cơ bản</p>
                 </div>
-                <div class="cert-item">
-                    <i class="fas fa-certificate"></i>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-award"></i>
                     <p class="cert-name">Hoàn thành khóa học React & Next.js</p>
                 </div>
-                <div class="cert-item">
-                    <i class="fas fa-trophy"></i>
-                    <p class="cert-name">Chứng chỉ MOS</p>
-                    <p class="cert-detail">Chưa có</p>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-lightbulb"></i>
+                    <p class="cert-name">Tư Duy Sáng Tạo</p>
+                    <p class="cert-detail">Trong giải quyết vấn đề</p>
                 </div>
-                <div class="cert-item">
-                    <i class="fas fa-certificate"></i>
-                    <p class="cert-name">Chứng chỉ Lập trình Java</p>
-                    <p class="cert-detail">Không có</p>
+                <div class="cert-item" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-laptop-code"></i>
+                    <p class="cert-name">Kỹ Năng Lập Trình Cơ Bản</p>
+                    <p class="cert-detail">Java, C</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Chứng Chỉ và Giải Thưởng -->
-
-    <!-- Begin Kỹ năng & Chuyên môn -->
     <section id="skills-section" class="section skills">
         <div class="container">
             <div class="text-center mb-12">
-                <h1 class="section-title">Kỹ năng & Chuyên môn</h1>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-aos="fade-up">Kỹ năng & Chuyên môn</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                     Có nền tảng về các framework front-end như React và thư viện NextJS, cùng với kinh nghiệm
                     trong các dự án web.
                 </p>
             </div>
-            <!-- Công cụ và Công nghệ -->
             <div class="skills-grid">
-                <div class="skill-group-card">
+                <div class="skill-group-card tech-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-group-header">
-                        <h2 class="skill-group-title">
+                        <h3 class="skill-group-title">
                             <i class="fas fa-wrench icon-title"></i>
                             Công cụ & Công nghệ
-                        </h2>
+                        </h3>
                         <p class="skill-group-description">Có kinh nghiệm xây dựng các ứng dụng web.</p>
                     </div>
 
@@ -297,13 +247,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Kỹ năng mềm  -->
-                <div class="skill-group-card">
+                <div class="skill-group-card soft-skill-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-group-header">
-                        <h2 class="skill-group-title">
+                        <h3 class="skill-group-title">
                             <i class="fas fa-users icon-title"></i>
                             Kỹ Năng Mềm
-                        </h2>
+                        </h3>
                         <p class="skill-group-description">Các kỹ năng làm việc nhóm và giải quyết vấn đề.</p>
                     </div>
 
@@ -317,13 +266,12 @@
                             cá nhân</li>
                     </ul>
                 </div>
-                <!-- Ngoại ngữ  -->
-                <div class="skill-group-card">
+                <div class="skill-group-card other-skill-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-group-header">
-                        <h2 class="skill-group-title">
+                        <h3 class="skill-group-title">
                             <i class="fas fa-globe icon-title"></i>
                             Ngoại ngữ & Khác
-                        </h2>
+                        </h3>
                         <p class="skill-group-description">Các công cụ và ngôn ngữ hỗ trợ công việc.</p>
                     </div>
 
@@ -337,41 +285,35 @@
             </div>
         </div>
     </section>
-    <!-- End Kỹ năng & Chuyên môn -->
-
-    <!-- Begin Sở thích  -->
     <section id="hobbies-section" class="section hobbies">
         <div class="container text-center">
-            <h1 class="section-title">Sở Thích Cá Nhân</h1>
-            <p class="section-subtitle">
+            <h2 class="section-title" data-aos="fade-up">Sở Thích Cá Nhân</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                 Những hoạt động giúp mình cân bằng cuộc sống và phát triển tư duy sáng tạo.
             </p>
 
             <div class="hobbies-grid">
-                <div class="hobby-item">
+                <div class="hobby-item" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-book-open"></i>
                     <p class="hobby-name">Đọc sách</p>
                 </div>
-                <div class="hobby-item">
+                <div class="hobby-item" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fas fa-code"></i>
                     <p class="hobby-name">Coding</p>
                     <p class="hobby-desc">Tìm hiểu và ứng dụng các công nghệ mới như AI/ML vào dự án cá nhân.</p>
                 </div>
-                <div class="hobby-item">
+                <div class="hobby-item" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fas fa-camera"></i>
                     <p class="hobby-name">Chụp ảnh</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Sở thích  -->
-
-    <!-- Begin Project  -->
     <section id="projects-section" class="section projects">
         <div class="container">
             <div class="text-center mb-12">
-                <h1 class="section-title">Các Dự Án Đã Thực Hiện</h1>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-aos="fade-up">Các Dự Án Đã Thực Hiện</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                     Dự án cá nhân và đồ án tại trường giúp mình củng cố kỹ năng kỹ thuật và khả năng giải
                     quyết vấn đề một cách sáng tạo.
                 </p>
@@ -379,7 +321,7 @@
 
             <div class="project-grid">
                 <a href="https://github.com/Nguyenhien171/EcomFE" target="_blank" rel="noopener noreferrer"
-                    class="project-link-wrap">
+                    class="project-link-wrap" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image-placeholder">
                             <img src="./images/ecommerce.jpg" alt="Ecommerce Frontend Project" class="project-image" />
@@ -387,12 +329,14 @@
                         <div class="project-card-content">
                             <h4 class="project-tag">Front-End / Next.js</h4>
                             <h3 class="project-title">Hệ thống E-commerce (FE)</h3>
+                            <p class="project-description">Xây dựng giao diện người dùng hiện đại, responsive cho trang
+                                mua sắm trực tuyến.</p>
                         </div>
                     </div>
                 </a>
 
                 <a href="https://github.com/Danhtran07/gamehubplatform" target="_blank" rel="noopener noreferrer"
-                    class="project-link-wrap">
+                    class="project-link-wrap" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image-placeholder">
                             <img src="./images/gamehub.jpg" alt="Gamehub Platform Project" class="project-image" />
@@ -400,12 +344,14 @@
                         <div class="project-card-content">
                             <h4 class="project-tag">Back-End / Java Swing</h4>
                             <h3 class="project-title">Game Hub Platform</h3>
+                            <p class="project-description">Phát triển nền tảng quản lý và chạy các trò chơi mini trên
+                                desktop.</p>
                         </div>
                     </div>
                 </a>
 
                 <a href="https://github.com/Katyusha-ski/LapTrinhJava" target="_blank" rel="noopener noreferrer"
-                    class="project-link-wrap">
+                    class="project-link-wrap" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card">
                         <div class="project-image-placeholder">
                             <img src="./images/speakingE.jpg" alt="AI English Project" class="project-image" />
@@ -413,12 +359,14 @@
                         <div class="project-card-content">
                             <h4 class="project-tag">Mobile App / React Native</h4>
                             <h3 class="project-title">Ứng dụng luyện nói tiếng Anh có AI</h3>
+                            <p class="project-description">Ứng dụng di động giúp người dùng luyện phát âm và giao tiếp
+                                tiếng Anh.</p>
                         </div>
                     </div>
                 </a>
 
                 <a href="https://github.com/Nguyenhien171/EcomFE" target="_blank" rel="noopener noreferrer"
-                    class="project-link-wrap">
+                    class="project-link-wrap" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-card">
                         <div class="project-image-placeholder">
                             <img src="./images/STrangsuc.jpg" alt="Jewelry Sales System" class="project-image" />
@@ -426,20 +374,18 @@
                         <div class="project-card-content">
                             <h4 class="project-tag">Full-stack / Spring Boot/MySQL</h4>
                             <h3 class="project-title">Hệ thống quản lý bán hàng trang sức</h3>
+                            <p class="project-description">Quản lý kho hàng, đơn hàng và khách hàng cho cửa hàng trang
+                                sức.</p>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
     </section>
-    <!-- End Project  -->
-
-
-    <!-- Begin Footer  -->
     <footer id="footer" class="footer">
         <div class="container text-center">
-            <h2 class="footer-title">Liên hệ mình</h2>
-            <div class="social-links">
+            <h2 class="footer-title" data-aos="fade-up">Liên hệ mình</h2>
+            <div class="social-links" data-aos="fade-up" data-aos-delay="100">
                 <a href="mailto:nguyennhienn1701@gmail.com" class="social-icon-link" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -450,7 +396,8 @@
                     class="social-icon-link" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook">
+                <a href="https://www.facebook.com/hien.nguyenthi.171" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/hi%E1%BB%81n-nguy%E1%BB%85n-a49a1037a/" target="_blank"
@@ -458,11 +405,81 @@
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
-            <p class="copyright">© Nguyễn Hiền.</p>
+            <p class="copyright" data-aos="fade-up" data-aos-delay="10">© Nguyễn Hiền</p>
         </div>
-    </footer>
-    <!-- End Footer  -->
 
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Khởi tạo AOS
+        AOS.init({
+            once: true, // Chỉ animate khi scroll qua lần đầu tiên
+            mirror: false // Không lặp lại animation khi scroll lên/xuống
+        });
+
+        // Chức năng bật/tắt menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon'); // Lấy icon bằng ID mới
+
+            menu.classList.toggle('hidden');
+
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        // HÀM CHẠY HIỆU ỨNG TYPING
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const typingElement = document.getElementById('typing-text');
+
+            if (typingElement) { // Đảm bảo phần tử tồn tại
+                typingElement.classList.add('typing-text-container');
+
+                typingElement.addEventListener('animationend', (e) => {
+                    if (e.animationName === 'typing') {
+                        typingElement.style.borderRight = 'none';
+                        typingElement.style.animation = 'typing 10s steps(120, end) forwards';
+                    }
+                });
+            }
+        });
+
+        // HÀM CHO ACTIVE NAV LINK KHI SCROLL
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, header, footer'); // Lấy tất cả các section và header, footer
+            const navLinks = document.querySelectorAll('.desktop-menu .nav-link');
+
+            function setActiveLink() {
+                let currentActive = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Điều chỉnh offset để đường gạch chân hiện sớm hơn/muộn hơn một chút
+                    const offset = 200;
+
+                    if (pageYOffset >= sectionTop - offset && pageYOffset < sectionTop + sectionHeight - offset) {
+                        currentActive = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav-link'); // Xóa tất cả các active cũ
+                    if (link.getAttribute('data-section') === currentActive) {
+                        link.classList.add('active-nav-link'); // Thêm active vào link tương ứng
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink(); // Gọi lần đầu để set trạng thái ban đầu
+        });
+    </script>
 </body>
 
 </html>

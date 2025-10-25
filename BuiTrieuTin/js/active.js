@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const video = document.querySelector("#bg-video");
-  video.load(); // ép tải ngay khi DOM ready
+  video.load();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -110,24 +110,3 @@ const swiper = new Swiper(".parallax-swiper", {
   },
   speed: 1000,
 });
-
-ScrollReveal({
-  reset: true, // Cho phép hiệu ứng xuất hiện lại khi scroll lên
-  distance: "60px",
-  duration: 1000,
-  delay: 100,
-});
-
-// Hiệu ứng cho header và footer
-ScrollReveal().reveal("header", { origin: "top" });
-ScrollReveal().reveal("footer", { origin: "bottom" });
-
-// Hiệu ứng cho 8 section
-ScrollReveal().reveal(".sectionOne", { origin: "left" });
-ScrollReveal().reveal(".sectionTwo", { origin: "right" });
-ScrollReveal().reveal(".sectionThree", { origin: "bottom" });
-ScrollReveal().reveal(".sectionFour", { origin: "top" });
-ScrollReveal().reveal(".sectionFive", { origin: "left" });
-ScrollReveal().reveal(".sectionSix", { origin: "right" });
-ScrollReveal().reveal(".sectionSeven", { origin: "bottom" });
-ScrollReveal().reveal(".sectionEight", { origin: "top" });

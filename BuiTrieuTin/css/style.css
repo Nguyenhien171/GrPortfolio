@@ -1456,4 +1456,32 @@ video {
   color: var(--color-two);
   background-color: #140401;
 }
+
+@media (max-width: 576px) {
+  .footer .wrapper .content-left {
+    padding-left: 10px;
+  }
+
+  .footer .wrapper .content-right {
+    padding-right: 10px;
+  }
+
+  .footer .wrapper .content-left .name {
+    font-weight: 550;
+    font-size: 14px;
+  }
+
+  .footer .wrapper .content-left .sub {
+    font-size: 10px;
+  }
+
+  .footer .wrapper .content-right a {
+    margin-right: 10px;
+    font-size: 13px;
+  }
+
+  .footer .wrapper .content-right .up {
+    padding: 10px;
+  }
+}
 /* End Footer */

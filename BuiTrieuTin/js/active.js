@@ -1,6 +1,11 @@
 // navbar.js
 
 document.addEventListener("DOMContentLoaded", () => {
+  const video = document.querySelector("#bg-video");
+  video.load(); // ép tải ngay khi DOM ready
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".navbar-menu ul li a");
   const sections = document.querySelectorAll("section");
 
